@@ -1,0 +1,160 @@
+.skip {
+    position: absolute;
+    top: -40px;
+    left: 0;
+}
+
+.skip:focus {
+    top: 0;
+  }
+
+nav, main, footer{
+	border: 3px solid #0000FF;
+	margin: 20px 0;
+}
+
+main, nav {
+    text-align: center;
+}
+
+h1{
+	font-size: 2em; 
+	font-weight: bold;
+}
+
+h2{
+	font-size: 1em; 
+	font-weight: bold;
+}
+
+img{
+    height: 175px;
+	width: auto;
+    border: 3px solid blue;
+    padding: 25px;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+nav li{
+	background-color: #a9ebe8;
+	padding:10px;
+	width:50%;
+	border:1px solid black;
+	display: inline-block;
+}
+
+.nav_links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.current-page{
+    font-style: italic;
+    font-weight: bold;
+}
+
+a:visited{color:#0000FF}
+
+#norwaymain img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.norwaycontainer{
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: repeat(9, 1fr);
+}
+
+.norwaycontainer img {
+    grid-column-start: 2;
+    justify-self: center;
+    justify-items: center;
+}
+
+.greececontainer{   
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.greececontainer div:nth-child(odd){
+    margin-left: 0;
+    margin-right: auto;
+}
+.greececontainer div:nth-child(even){
+    margin-left: auto;
+    margin-right: 0;
+}
+
+
+@media screen and (min-width:750px){
+    .norwaycontainer{
+        grid-template-columns: 1fr 5fr 1fr 5fr 1fr;
+        grid-template-rows: repeat(5, 1fr);
+    }
+
+    .norwaycontainer img:nth-child(odd){
+        grid-column: 2 / span 1;
+    }
+    .norwaycontainer img:nth-child(even){
+        grid-column: 4 / span 1;
+    }
+
+    .norwaycontainer img:last-child {
+        grid-column: 2 / span 3;
+    }
+
+    .greececontainer{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .greececontainer div:nth-child(odd){
+        margin-left: auto;
+    }
+    .greececontainer div:nth-child(even){
+        margin-right: auto;
+    }
+
+    .nav_links {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+
+@media screen and (min-width:1200px){
+    .norwaycontainer{
+        grid-template-columns: 1fr 5fr 1fr 5fr 1fr 5fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .norwaycontainer img:nth-child(3n+1){
+        grid-column: 2 / span 1;
+    }
+
+    .norwaycontainer img:nth-child(3n+2){
+        grid-column: 4 / span 1;
+    }
+
+    .norwaycontainer img:nth-child(3n+3){
+        grid-column: 6 / span 1;
+    }
+
+    .greececontainer{
+        justify-content: space-evenly;
+    }
+
+    .nav_links {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    nav li{
+        width: 10%;
+    }
+}
